@@ -3,26 +3,28 @@
 
 int main(int argc, char **argv)
 {
-    int i = 1;
+    int i;
     int nbr;
 
-    nbr = atoi(argv[1]);
     if (argc == 2)
     {
+        nbr = atoi(argv[1]);
+        i = 2;
         if (nbr == 1)
             printf("1");
-        while (nbr > i++)
+        while (nbr > 1)
         {
             if (nbr % i == 0)
             {
                 printf("%d", i);
-                if (nbr == i)
-                    break;
                 nbr /= i;
-                printf("*");
-                i = 1;
+                if (nbr > 1)
+                    printf("*");
             }
+            else
+                i++;
         }
+
     }
     printf("\n");
     return (0);
